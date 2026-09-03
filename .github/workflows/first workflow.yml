@@ -6,3 +6,18 @@ jobs:
     steps:
       - name: my-step
         run: echo "Hello World!"
+        
+name: Cron Job - Every 5 Minutes
+'on':
+  schedule:
+    - cron: '*/5 * * * *'
+jobs:
+  cron-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Job Started
+        run: echo "Task 3 started - Cron job is running every 5 minutes."
+      - name: Display Date and Time
+        run: date
+      - name: Completion Message
+        run: echo "Task 3 completed successfully!"
